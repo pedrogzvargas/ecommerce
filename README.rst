@@ -50,6 +50,10 @@ Load fixtures::
     $ python manage.py eccomerce_fixtures
 
 
+Run migrations::
+
+    $ python manage.py migrate
+
 Postman
 -------
 ::
