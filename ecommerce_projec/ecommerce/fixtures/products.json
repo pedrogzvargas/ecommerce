@@ -1,0 +1,46 @@
+[
+  {
+    "model": "ecommerce.Product",
+    "pk": 1,
+    "fields": {
+      "name": "Fluent Python",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quantity": 10,
+      "price": 12,
+      "category": 1
+    }
+  },
+  {
+    "model": "ecommerce.Product",
+    "pk": 2,
+    "fields": {
+      "name": "Serious Python",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quantity": 12,
+      "price": 12,
+      "category": 1
+    }
+  },
+  {
+    "model": "ecommerce.Product",
+    "pk": 3,
+    "fields": {
+      "name": "Effective Python",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quantity": 18,
+      "price": 12,
+      "category": 1
+    }
+  },
+  {
+    "model": "ecommerce.Product",
+    "pk": 4,
+    "fields": {
+      "name": "Mastering Django",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "quantity": 10,
+      "price": 12.99,
+      "category": 1
+    }
+  }
+]

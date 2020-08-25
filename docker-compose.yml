@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+    ecommerce-app:
+        container_name: ecommerce-app
+        restart: always
+        build:
+            context: .
+            dockerfile: ./compose/develop/django/Dockerfile
+        depends_on:
+            - ecommerce-database
+            - ecommerce-redis
+        volumes:
+            - .:/app
+        command: /start
+
+    ecommerce-redis:
+        image: "redis:alpine"
+        container_name: ecommerce-redis
+        ports:
+            - "${REDIS_DB_PORT}:6379"
+
+    ecommerce-database:
+        env_file: .env
+        container_name: ecommerce-database
+        image: postgres:10
+        environment:
+          - POSTGRES_DB=${POSTGRES_DB}
+          - POSTGRES_USER=${POSTGRES_USER}
+          - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+          - PG_DATA=/var/lib/postgresql/data
+        ports:
+          - "${POSTGRES_DB_PORT}:5432"
+        volumes:
+          - ${POSTGRES_DB_LOCATION}:/var/lib/postgresql/data
+
+    ecommerce-proxy:
+        env_file: .env
+        image: nginx:latest
+        container_name: ecommerce-proxy
+        restart: always
+        ports:
+            - "80:80"
+        volumes:
+            - ./configs/nginx:/etc/nginx/conf.d

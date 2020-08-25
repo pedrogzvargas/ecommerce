@@ -1,0 +1,26 @@
+[
+  {
+    "model": "ecommerce.Category",
+    "pk": 1,
+    "fields": {
+      "name": "Books",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  },
+  {
+    "model": "ecommerce.Category",
+    "pk": 2,
+    "fields": {
+      "name": "Clothing",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  },
+  {
+    "model": "ecommerce.Category",
+    "pk": 3,
+    "fields": {
+      "name": "Music",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  }
+]
