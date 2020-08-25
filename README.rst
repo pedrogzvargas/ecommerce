@@ -45,14 +45,14 @@ then run the next commands::
     $ docker-compose up
 
 
-Load fixtures::
-
-    $ python manage.py eccomerce_fixtures
-
-
 Run migrations::
 
     $ python manage.py migrate
+
+
+Load fixtures::
+
+    $ python manage.py eccomerce_fixtures
 
 Postman
 -------
