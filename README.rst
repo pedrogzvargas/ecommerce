@@ -45,6 +45,17 @@ then run the next commands::
     $ docker-compose up
 
 
+Create database::
+
+    $ docker exec -it ecommerce-database bash
+
+    $ su postgres
+
+    $ psql
+
+    $ create database database_name with owner postgres;
+
+
 Run migrations::
 
     $ python manage.py migrate
