@@ -1,6 +1,7 @@
 # Python imports
 from os.path import abspath, basename, dirname, join, normpath
 import sys
+import environ
 
 
 # ##### PATH CONFIGURATION ################################
@@ -33,6 +34,19 @@ PROJECT_TEMPLATES = [
 
 # add apps/ to the Python path
 sys.path.append(normpath(join(PROJECT_ROOT, 'apps')))
+
+
+# ##### APPLICATION VARIABLE CONFIGURATION #########################
+
+env = environ.Env()
+environ.Env.read_env(join(PROJECT_ROOT, ".env"))
+
+POSTGRES_HOST = env.str("POSTGRES_HOST", default="127.0.0.1")
+POSTGRES_DB = env.str("POSTGRES_DB", default="ecommerce_db")
+POSTGRES_USER = env.str("POSTGRES_USER", default="postgres")
+POSTGRES_PASSWORD = env.str("POSTGRES_PASSWORD", default="postgres")
+POSTGRES_DB_PORT = env.int("POSTGRES_DB_PORT", default=5432)
+REDIS_DB_PORT = env.int("REDIS_DB_PORT", default=6379)
 
 
 # ##### APPLICATION CONFIGURATION #########################

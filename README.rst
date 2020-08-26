@@ -33,10 +33,14 @@ Usage
 To build and run this project with ``docker-compose`` set variables in ``.env`` file::
 
     POSTGRES_DB=<value>
+    POSTGRES_HOST=<value>
+    POSTGRES_DB=<value>
     POSTGRES_USER=<value>
     POSTGRES_PASSWORD=<value>
     POSTGRES_DB_LOCATION=<value>
     POSTGRES_DB_PORT=<value>
+    POSTGRES_EXTERNAL_PORT=<value>
+    REDIS_DB_PORT=<value>
 
 then run the next commands::
 
@@ -64,6 +68,13 @@ Run migrations::
 Load fixtures::
 
     $ python manage.py eccomerce_fixtures
+
+
+Run commands from local to container::
+
+    $ docker-compose run ecommerce-app python manage.py migrate
+
+    $ docker-compose run ecommerce-app python manage.py eccomerce_fixtures
 
 Postman
 -------

@@ -30,7 +30,7 @@ services:
           - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
           - PG_DATA=/var/lib/postgresql/data
         ports:
-          - "${POSTGRES_DB_PORT}:5432"
+          - "${POSTGRES_EXTERNAL_PORT}:${POSTGRES_DB_PORT}"
         volumes:
           - ${POSTGRES_DB_LOCATION}:/var/lib/postgresql/data
 
