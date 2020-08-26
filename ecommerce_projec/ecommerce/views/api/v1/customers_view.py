@@ -3,13 +3,11 @@ from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 from ecommerce_projec.ecommerce.serializers import CustomerSerializer
 from ecommerce_projec.ecommerce.services import CustomerService, ActorService
 
 
 class CustomersView(APIView):
-    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         try:

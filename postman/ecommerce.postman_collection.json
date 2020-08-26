@@ -382,7 +382,8 @@
 							{
 								"key": "Authorization",
 								"value": "Token 445e07c79f3c8dec9fb62bf5ddf89d1030aa7e66",
-								"type": "text"
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
