@@ -25,7 +25,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     quantity = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=20, decimal_places=8, default=Decimal(0.0))
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.PROTECT)
 
 
 class Purchase(models.Model):

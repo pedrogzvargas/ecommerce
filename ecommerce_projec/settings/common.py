@@ -63,6 +63,7 @@ DEFAULT_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'debug_toolbar',
+    'graphene_django',
     # Project apps
     'ecommerce_projec.ecommerce',
 ]
@@ -173,3 +174,9 @@ CACHE_TTL = 60 * 2
 
 # ##### AUTH CONFIGURATION ###############################
 AUTH_USER_MODEL = 'auth.User'
+
+
+# ##### GRAPHENE  ###############################
+GRAPHENE = {
+    "SCHEMA": "ecommerce_projec.schema.schema"
+}
